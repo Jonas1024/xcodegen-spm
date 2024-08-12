@@ -1,0 +1,23 @@
+name: Example
+options:
+  bundleIdPrefix: com.mycompany
+  deploymentTarget:
+    iOS: '13.0'
+
+packages:
+  SDK:
+    path: ./SDK
+
+targets:
+  MyApp:
+    type: application
+    platform: iOS
+    sources: 
+      - path: Example
+
+    dependencies:
+      - package: SDK
+        products:
+        - MyLibrary1
+        - MyLibrary2
+        embed: true
